@@ -259,7 +259,7 @@ body {
         <h2>Navigasi Utama</h2>
         <nav>
         <ul>
-            <li><a href="hal1.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="hal2.php">Jajanan Manis</a></li>
             <li><a href="hal3.php">Jajanan Gurih</a></li>
             <li><a href="read.php">Add Menu (CRUD)</a></li>
@@ -288,3 +288,4 @@ body {
 
 </body>
 </html>
+
