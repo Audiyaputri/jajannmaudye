@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JAJANN.MAUDYE</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap");
+
+      :root {
+        --color-primary: #1c315e;
+        --color-secondary: #fbf8f1;
+        --color-accent: #8aaae5;
+        --color-text-light: #f1f1f1;
+        --color-text-dark: #333333;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        line-height: 1.6;
+        background-color: var(--color-secondary);
+        color: var(--color-text-dark);
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        padding: 20px;
+      }
+
+      .page-container {
+        width: 90%;
+        max-width: 1200px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .header {
+        background-color: var(--color-primary);
+        color: var(--color-text-light);
+        padding: 20px 40px;
+        text-align: center;
+        border-bottom: 5px solid var(--color-accent);
+      }
+
+      .header h1 {
+        font-weight: 700;
+        letter-spacing: 2px;
+        margin: 0;
+        font-size: 2em;
+      }
+
+      .content-container {
+        display: flex;
+        min-height: 600px;
+      }
+
+      .kolom1 {
+        flex: 0 0 250px;
+        background-color: #f0ead6;
+        padding: 30px 20px;
+        border-right: 1px solid #e0e0e0;
+      }
+
+      .kolom1 h2 {
+        color: var(--color-primary);
+        font-size: 1.3em;
+        border-bottom: 2px solid var(--color-accent);
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        font-weight: 600;
+      }
+
+      .kolom1 ul {
+        list-style: none;
+      }
+
+      .kolom1 li {
+        margin-bottom: 5px;
+      }
+
+      .kolom1 a {
+        display: block;
+        text-decoration: none;
+        color: var(--color-text-dark);
+        padding: 10px 15px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+      }
+
+      .kolom1 a:hover {
+        background-color: var(--color-primary);
+        color: var(--color-text-light);
+        transform: translateX(5px);
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .kolom2 {
+        flex-grow: 1;
+        background-color: var(--color-secondary);
+        padding: 40px;
+      }
+
+      .kolom2 .main-title {
+        color: var(--color-primary);
+        font-size: 2em;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+
+      .kolom2 h3 {
+        color: var(--color-primary);
+        margin-top: 30px;
+        margin-bottom: 10px;
+        border-left: 5px solid var(--color-accent);
+        padding-left: 10px;
+      }
+
+      .kolom2 p {
+        margin-bottom: 15px;
+        text-align: justify;
+      }
+      .best-seller-items {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        flex-wrap: wrap;
+      }
+
+      .best-seller-items > div {
+        text-align: center;
+        padding: 25px;
+        background: linear-gradient(145deg, #fff6e8, #e6efff);
+        border-radius: 20px;
+        /* Dipertahankan: Border pada card produk */
+        border: 3px solid var(--color-accent);
+        width: 100%;
+        max-width: 260px;
+        transition: all 0.3s ease;
+        box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+      }
+
+      .best-seller-items > div:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 18px 35px rgba(0, 0, 0, 0.18);
+        border-color: var(--color-primary);
+      }
+
+      /* STYLE GAMBAR PRODUK */
+      .best-seller-items img {
+        width: 100%;
+        max-width: 220px;
+        height: 160px;
+        object-fit: cover;
+        border-radius: 15px;
+        margin-bottom: 15px;
+        /* Dipertahankan: Bingkai pada gambar produk */
+        border: 2px solid var(--color-accent);
+      }
+
+      .best-seller-items p {
+        font-weight: 700;
+        color: var(--color-primary);
+        margin: 0;
+        font-size: 1.2em;
+      }
+
+      .footer {
+        background-color: var(--color-primary);
+        color: var(--color-text-light);
+        padding: 15px;
+        text-align: center;
+        font-size: 0.9em;
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      @media (max-width: 768px) {
+        body {
+          padding: 10px;
+        }
+
+        .page-container {
+          width: 100%;
+          border-radius: 0;
+          box-shadow: none;
+        }
+
+        .header h1 {
+          font-size: 1.5em;
+        }
+
+        .content-container {
+          flex-direction: column;
+          min-height: auto;
+        }
+
+        .kolom1 {
+          flex: 1 1 100%;
+          border-right: none;
+          border-bottom: 1px solid #e0e0e0;
+          padding: 20px;
+        }
+
+        .kolom1 h2 {
+          text-align: center;
+          border-bottom: none;
+          padding-bottom: 0;
+          margin-bottom: 10px;
+        }
+
+        .kolom1 nav ul {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
+          gap: 5px;
+        }
+
+        .kolom1 li {
+          margin-bottom: 0;
+        }
+
+        .kolom1 a {
+          padding: 8px 12px;
+          font-size: 0.9em;
+          text-align: center;
+        }
+
+        .kolom1 a:hover {
+          transform: none;
+        }
+
+        .kolom2 {
+          padding: 20px;
+        }
+
+        .kolom2 .main-title {
+          font-size: 1.5em;
+        }
+
+        .kolom2 > div:nth-of-type(3) {
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+        }
+
+        .kolom2 > div:nth-of-type(3) > div {
+          max-width: 80%;
+          padding: 15px;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .kolom1 nav ul {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .kolom1 li {
+          margin-bottom: 5px;
+        }
+
+        .kolom1 a {
+          padding: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-container">
+      <header class="header">
+        <h1>JAJANN.MAUDYE</h1>
+      </header>
+
+      <div class="content-container">
+        <aside class="kolom1">
+          <h2>Navigasi Utama</h2>
+          <nav>
+            <ul>
+              <li><a href="hal1.html">Home</a></li>
+              <li><a href="hal2.php">Jajanan Manis</a></li>
+              <li><a href="hal3.php">Jajanan Gurih</a></li>
+              <li><a href="read.php">Add Menu (CRUD)</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <main class="kolom2">
+          <h2>Selamat Datang di JAJANN.MAUDYE!</h2>
+          <p>
+            Sebuah stand makanan yang menghadirkan beragam jajanan dan minuman
+            dengan cita rasa khas dan harga terjangkau.
+          </p>
+
+          <h3>Apa Saja yang Kami Tawarkan?</h3>
+          <p>
+            Berbagai pilihan makanan ringan seperti kue-kue tradisional, camilan
+            kekinian, dan minuman segar. Mulai dari rasa yang manis hingga yang
+            gurih.
+          </p>
+
+          <h3>Best Seller di JAJANN.MAUDYE</h3>
+          <p>
+            Dua menu yang paling sering dibeli dan selalu cepat habis adalah:
+          </p>
+
+          <div class="best-seller-items">
+            <div class="product-card">
+              <img src="img/risol.jpg" alt="Risol Mayo" />
+              <h4>RISOL MAYO</h4>
+              <p class="description">
+                Risol gurih dengan mayo creamy dan sosis.
+              </p>
+            </div>
+
+            <div class="product-card">
+              <img src="img/donat.jpg" alt="Donat Topping" />
+              <h4>DONAT TOPPING</h4>
+              <p class="description">
+                Donat empuk dengan topping manis warna-warni.
+              </p>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <footer class="footer">
+        <p>Hak Cipta © 2025 Jajann.maudye | Tugas Praktikum V Web Dasar</p>
+      </footer>
+    </div>
+  </body>
+</html>
